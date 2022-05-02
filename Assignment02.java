@@ -1,9 +1,33 @@
 import java.util.Scanner;
 import java.util.InputMismatchException;
 
-class Shape {
+interface Circle{
+void circle(int radius_of_circle);
+}
 
-    void circle(int radius_of_circle) {
+interface Rectangle{
+void rectangle(int length_of_rectangle, int width_of_rectangle);
+}
+
+interface Triangle{
+void triangle(int base_of_triangle, int height_of_triangle);
+}
+
+interface Square{
+void square(int side_of_square);
+}
+
+interface Sphere{
+void sphere(int radius_of_sphere);
+}
+
+interface Cylinder{
+void cylinder(int radius_of_cylinder, int height_of_cylinder);
+}
+
+class Shape implements Circle, Rectangle, Triangle, Square, Sphere, Cylinder{
+
+    public void circle(int radius_of_circle) {
         float area_of_circle = (float) (3.14 * radius_of_circle * radius_of_circle);
         System.out.println('\n'
                 + "----------------------------------------------------------------------------------------------------------");
@@ -18,7 +42,7 @@ class Shape {
 
     }
 
-    void rectangle(int length_of_rectangle, int width_of_rectangle) {
+   public void rectangle(int length_of_rectangle, int width_of_rectangle) {
         float area_of_rectangle = (float) (length_of_rectangle * width_of_rectangle);
         System.out.println('\n'
                 + "----------------------------------------------------------------------------------------------------------");
@@ -35,7 +59,7 @@ class Shape {
 
     }
 
-    void triangle(int base_of_triangle, int height_of_triangle) {
+   public void triangle(int base_of_triangle, int height_of_triangle) {
         float area_of_triangle = (float) ((base_of_triangle * height_of_triangle) / 2);
         System.out.println('\n'
                 + "----------------------------------------------------------------------------------------------------------");
@@ -46,7 +70,7 @@ class Shape {
 
     }
 
-    void perimeterOfTriangle(int side_one_of_triangle, int side_two_of_triangle, int side_three_of_triangle) {
+   public void perimeterOfTriangle(int side_one_of_triangle, int side_two_of_triangle, int side_three_of_triangle) {
 
         float perimeter_of_triangle = (float) (side_one_of_triangle + side_two_of_triangle
                 + side_three_of_triangle);
@@ -60,7 +84,7 @@ class Shape {
 
     }
 
-    void square(int side_of_square) {
+   public void square(int side_of_square) {
         float area_of_square = (float) (side_of_square * side_of_square);
         System.out.println('\n'
                 + "----------------------------------------------------------------------------------------------------------");
@@ -74,7 +98,7 @@ class Shape {
 
     }
 
-    void sphere(int radius_of_sphere) {
+   public void sphere(int radius_of_sphere) {
         float area_of_sphere = (float) (4 * 3.14 * radius_of_sphere * radius_of_sphere);
         System.out.println('\n'
                 + "----------------------------------------------------------------------------------------------------------");
@@ -89,7 +113,7 @@ class Shape {
 
     }
 
-    void cylinder(int radius_of_cylinder, int height_of_cylinder) {
+   public void cylinder(int radius_of_cylinder, int height_of_cylinder) {
 
         float area_of_cylinder = (float) ((2 * 3.14 * radius_of_cylinder * height_of_cylinder)
                 + (2 * 3.14 * radius_of_cylinder * radius_of_cylinder));
@@ -198,4 +222,4 @@ class Shape {
 
         } while (shape != 0);
     }
-}
+} 
