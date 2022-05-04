@@ -110,7 +110,9 @@ class Employees {
                             if (employee.name.equals(name)) {
                                 list_iterator.remove();
                                 found = true;
+				break; //Record is found then loop break;
                             }
+				
                         }
                         if (found) {
                             object_output_stream = new ObjectOutputStream(new FileOutputStream(file));
