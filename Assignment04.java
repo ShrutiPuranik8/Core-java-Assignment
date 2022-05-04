@@ -1,20 +1,15 @@
 class AccountUnsafe {
     static int current_unsafe_balance = 1000;
 
-    static void withdrawUnsafe(String name,
-            int amount) {
+    static void withdrawUnsafe(String name, int amount) {
         if (current_unsafe_balance >= amount) {
-            System.out.println(name + " withdrawn "
-                    + amount);
+            System.out.println(name + " withdrawn " + amount);
             current_unsafe_balance = current_unsafe_balance - amount;
-            System.out.println("Current current_unsafe_balance: "
-                    + current_unsafe_balance);
+            System.out.println("Current_unsafe_balance: " + current_unsafe_balance);
 
         } else {
-            System.out.println(name
-                    + " you can not withdraw "
-                    + amount);
-            System.out.println("Current current_unsafe_balance is: " + current_unsafe_balance);
+            System.out.println(name + " you can not withdraw " + amount);
+            System.out.println("Current_unsafe_balance is: " + current_unsafe_balance);
 
         }
 
@@ -26,21 +21,16 @@ class Account {
 
     static int current_balance = 1000;
 
-    static synchronized void withdraw(String name,
-            int amount) {
+    static synchronized void withdraw(String name, int amount) {
 
         if (current_balance >= amount) {
-            System.out.println(name + " withdrawn "
-                    + amount);
+            System.out.println(name + " withdrawn " + amount);
             current_balance = current_balance - amount;
-            System.out.println("Current current_balance: "
-                    + current_balance);
+            System.out.println("Current_balance: " + current_balance);
 
         } else {
-            System.out.println(name
-                    + " you can not withdraw "
-                    + amount);
-            System.out.println("Current current_balance is: " + current_balance);
+            System.out.println(name + " you can not withdraw " + amount);
+            System.out.println("Current_balance is: " + current_balance);
 
         }
     }
